@@ -1,0 +1,5 @@
+catatan:
+1. jumlah presentase
+2. compare data ktp pemilih dan terkumpu;
+3. target caleg
+4. alert pemilihan suara 4%
