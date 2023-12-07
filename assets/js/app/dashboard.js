@@ -67,6 +67,8 @@ function Dashboard() {
 
         loadVotingChart(44, 55, 13, 43, 22, 10, 50, 34, 25, 30, 35, 20);
         loadKtpKec();
+        loadKtpCollect();
+        loadKtpTarget();
         // loadKtpKel();
 
 
@@ -129,11 +131,10 @@ function Dashboard() {
 }
 
 
-function loadVotingChart(a, b, c, d, e, f, g, h, i, j, k, l) {
+function loadVotingChart() {
     const apexChart = "#votingChartId";
     var options = {
-        // series: [44, 55, 13, 43, 22, 10, 50, 34, 25, 30, 35, 20],
-        series: [a, b, c, d, e, f, g, h, i, j, k, l],
+        series: [25251, 17913, 342989, 239988, 200670],
         chart: {
             width: 500,
             type: 'pie',
@@ -148,14 +149,13 @@ function loadVotingChart(a, b, c, d, e, f, g, h, i, j, k, l) {
             verticalAlign: "middle",
         },
         responsive: [{
-            breakpoint: 350,
+            breakpoint: 480,
             options: {
                 chart: {
-                    width: 250
+                    width: 350
                 },
-                // legend: false,
                 legend: {
-                    position: 'right'
+                    position: 'bottom'
                 }
             }
         }],
@@ -181,7 +181,7 @@ function loadVotingChart(a, b, c, d, e, f, g, h, i, j, k, l) {
             offsetX: 0,
             offsetY: 100,
         },
-        labels: ['Balaraja', 'Cikupa', 'Cisauk', 'Cisoka', 'Curug', 'Jambe', 'Jayanti', 'Kelapa Dua', 'Kemiri', 'Kresek', 'Krojo', 'Kosambi'],
+        labels: ['Grogol Pertamburan', 'Taman Sari', 'Kebon Jeruk', 'Palmerah', 'Kembangan'],
         plotOptions: {
         pie: {
             startAngle: 0,
@@ -238,26 +238,15 @@ function loadVotingChart(a, b, c, d, e, f, g, h, i, j, k, l) {
               }
             },      
           }
+        },
+        legend: {
+            formatter: function(seriesName, opts) {
+                return [seriesName, ": ", opts.w.globals.seriesTotals[opts.seriesIndex]]
+            }
         }
-        // legend: {
-            // formatter: function(seriesName, opts) {
-                // console.log(opts.w.globals.seriesTotals[opts.seriesIndex])
-                // var sum = 0
-                // sum = opts.w.globals.seriesTotals;
-
-                // console.log(sum.reduce((a, b) => a + b, 0))
-
-                // var sum = 0;
-                // for (i = 0; i<= opts.w.globals.series; i++) {
-                //     sum += opts.w.globals.series[i];
-                // }
-                // console.log(sum);
-                // return [seriesName, ": ", opts.w.globals.seriesTotals[opts.seriesIndex]]
-            // }
-        // }
     };
 
-    document.getElementById("doChangeVoting").innerHTML = '<div id="votingChartId"></div>';
+    // document.getElementById("doChangeVoting").innerHTML = '<div id="votingChartId"></div>';
 
 
     var chart = new ApexCharts(document.querySelector(apexChart), options);
@@ -270,17 +259,17 @@ function loadKtpKec() {
             series: [{
                 name: 'KTP Pemilih',
                 type: 'column',
-                data: [500, 300, 200, 300, 200, 280, 650, 460],
+                data: [179843, 97635, 268985, 171657, 226690],
                 color: primary
             }, {
                 name: 'KTP Terkumpul',
                 type: 'line',
-                data: [200, 300, 100, 150, 200, 220, 380, 35],
+                data: [13245, 3311, 23179, 13245, 19868],
                 color: success
             }, {
                 name: 'Target',
                 type: 'line',
-                data: [100, 200, 100, 200, 200, 110, 500, 400],
+                data: [37784, 37784, 37784, 37784, 37784],
                 color: danger
             }],
             chart: {
@@ -294,14 +283,14 @@ function loadKtpKec() {
                 verticalAlign: "middle",
             },
             dataLabels: {
-                enabled: false,
-                enabledOnSeries: [1]
+                enabled: true,
+                enabledOnSeries: [0]
             },
             stroke: {
                 width: [1, 4, 4]
             },
             markers: {
-              size: [4, 7]
+              size: [0, 4, 7]
             },
             // title: {
             //     text: 'XYZ - Stock Analysis (2009 - 2016)',
@@ -309,7 +298,7 @@ function loadKtpKec() {
             //     offsetX: 110
             // },
             xaxis: {
-                categories: ['Balaraja', 'Cikupa', 'Cisauk', 'Cisoka', 'Curug', 'Jambe', 'Jayanti', 'Kelapa Dua'],
+                categories: ['Grogol Pertamburan', 'Taman Sari', 'Kebon Jeruk', 'Palmerah', 'Kembangan'],
             },
             yaxis: [
                 {
@@ -375,6 +364,108 @@ function loadKtpKec() {
         var chart = new ApexCharts(document.querySelector(apexChart), options);
         chart.render();
 }
+
+function loadKtpCollect () {
+        const apexChart = '#ktpCollectChart'
+
+        var options = {
+            series: [350],
+            chart: {
+                height: 200,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        margin: 0,
+                        size: "65%"
+                    },
+                    dataLabels: {
+                        showOn: "always",
+                        name: {
+                            show: false,
+                            fontWeight: '700',
+                            fontSize: '12px'
+                        },
+                        value: {
+                            color: '#5E6278',
+                            fontSize: "22px",
+                            fontWeight: '700',
+                            offsetY: 12,
+                            show: true,
+                            formatter: function (val) {
+                                return val + '%';
+                            }
+                        }
+                    },
+                    track: {
+                        background: KTApp.getSettings()['colors']['theme']['light']['danger'],
+                        strokeWidth: '100%'
+                    }
+                }
+            },
+            // colors: [KTApp.getSettings()['colors']['theme']['base']['success']],
+            stroke: {
+                lineCap: "round",
+            },
+            labels: ["KTP Terkumpul"],
+            colors: [danger]
+        };
+
+        var chart = new ApexCharts(document.querySelector(apexChart), options);
+        chart.render();
+    }
+
+function loadKtpTarget () {
+        const apexChart = '#ktpTargetChart'
+
+        var options = {
+            series: [20],
+            chart: {
+                height: 200,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        margin: 0,
+                        size: "65%"
+                    },
+                    dataLabels: {
+                        showOn: "always",
+                        name: {
+                            show: false,
+                            fontWeight: '700',
+                            fontSize: '12px'
+                        },
+                        value: {
+                            color: '#5E6278',
+                            fontSize: "22px",
+                            fontWeight: '700',
+                            offsetY: 12,
+                            show: true,
+                            formatter: function (val) {
+                                return val + '%';
+                            }
+                        }
+                    },
+                    track: {
+                        background: KTApp.getSettings()['colors']['theme']['light']['success'],
+                        strokeWidth: '100%'
+                    }
+                }
+            },
+            colors: [KTApp.getSettings()['colors']['theme']['base']['success']],
+            stroke: {
+                lineCap: "round",
+            },
+            labels: ["KTP Target"]
+        };
+
+        var chart = new ApexCharts(document.querySelector(apexChart), options);
+        chart.render();
+    }
+
 
 // function loadKtpKel() {
 //     const apexChart = "#ktpKelChartId";

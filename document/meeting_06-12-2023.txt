@@ -1,0 +1,3 @@
+meeting 06-12-2023:
+1. presentase ktp terkumpul: (terkumpul/target)*100
+2. presentase ktp target: (target/dpt)*100

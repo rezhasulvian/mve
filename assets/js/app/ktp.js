@@ -13,6 +13,9 @@ function Ktp() {
 			
 		// }
 
+		var date = new Date();
+		var pDateTime = moment(date).format("yyy MM dd HH:mm:ss");
+
 		
 
 		table = $('#dt-ktps').DataTable({
@@ -147,67 +150,97 @@ function Ktp() {
 			});
 		});
 
-		$('input[type=file]').on('change', function(e) {
+		$('#submit').on('click', function(e) {
 			e.preventDefault();
 
-			var nik = ''
-			var name = ''
-			var gender = ''
-			var religion = ''
-			var marital = ''
-			var nationality = ''
+		    var nik = $('#dataKtpForm input[name="ktp"]').val();
+		    var name = $('#dataKtpForm input[name="name"]').val();
 
+			var gender = $('#dataKtpForm select[name="genderId"] option:selected').val();
+			var religion = $('#dataKtpForm select[name="religionId"] option:selected').val();
+			var marital = $('#dataKtpForm select[name="maritalId"] option:selected').val();
+			var nationality = $('#dataKtpForm select[name="nationalityId"] option:selected').val();
 
-			// console.log(fileSelector)
+			var createdBy = "Admin";
+			var createdDate = pDateTime;
+			var status = '<span class="label label-lg font-weight-bold label-light-success label-inline">ACTIVE</span>'
 
+			$('#dataKtpModal').modal('hide');
 
-			// var rec = new Tesseract.TesseractWorker();
-			// // rec.recognize(fileSelector.files[0])
-			// // 	.progress(function (response) {
-			// // 		console.log(response)
-			// // 	})
-			// // 	.then(function (data) {
-			// // 		console.log(data)
-			// // 	})
+		    table.row.add([name, gender, religion, marital, nationality, status, createdDate, createdBy,  ""]).draw();
 
-			// const { data: { text } } = await worker.recognize(fileSelector.files[0]);
-			// console.log(data)
+		    swal.fire({
+                position: 'top-right',
+                type: 'info',
+                title: 'Information',
+                text: 'Data berhasil diinput',
+                showConfirmButton: false,
+                timer: 1500
+            });
 
-			const { createWorker } = Tesseract;
-
-			(async () => {
-			  const worker = await createWorker("ind", 1, {
-			  	logger: m => console.log(m),
-			  });
-			  const { data: { lines } } = await worker.recognize(fileSelector.files[0], {
-			  	rotateAuto: true
-			  }, {imageColor: true, imageGrey: true, imageBinary: true});
-			  // const data = await worker.recognize(fileSelector.files[0]);
-			  console.log(lines)
-
-			  // #nik
-			  document.getElementById("ktp").setAttribute('value', lines[2].words[2].text)
-			  console.log(lines[2].words[2].text);
-
-			  // name
-			  var result = '';
-			  for(var i=2; i<lines[3].words.length; i++) {
-			  	result += lines[3].words[i].text + ' '
-			  }
-			  console.log(result)
-			  document.getElementById("name").setAttribute('value', result)
-
-			  // gender
-			  console.log(lines[5].words[3].text)
-			  $("#genderId").val(lines[5].words[3].text).trigger('change');
-
-			  // religion
-			  console.log(lines[10].words[2].text)
-			  $("#religionId").val(lines[10].words[2].text).trigger('change');
-
-			  await worker.terminate();
-			})();
 		});
+
+		// $('input[type=file]').on('change', function(e) {
+		// 	e.preventDefault();
+
+		// 	var nik = ''
+		// 	var name = ''
+		// 	var gender = ''
+		// 	var religion = ''
+		// 	var marital = ''
+		// 	var nationality = ''
+
+
+		// 	// console.log(fileSelector)
+
+
+		// 	// var rec = new Tesseract.TesseractWorker();
+		// 	// // rec.recognize(fileSelector.files[0])
+		// 	// // 	.progress(function (response) {
+		// 	// // 		console.log(response)
+		// 	// // 	})
+		// 	// // 	.then(function (data) {
+		// 	// // 		console.log(data)
+		// 	// // 	})
+
+		// 	// const { data: { text } } = await worker.recognize(fileSelector.files[0]);
+		// 	// console.log(data)
+
+		// 	const { createWorker } = Tesseract;
+
+		// 	(async () => {
+		// 	  const worker = await createWorker("ind", 1, {
+		// 	  	logger: m => console.log(m),
+		// 	  });
+		// 	  const { data: { lines } } = await worker.recognize(fileSelector.files[0], {
+		// 	  	rotateAuto: true
+		// 	  }, {imageColor: true, imageGrey: true, imageBinary: true});
+		// 	  // const data = await worker.recognize(fileSelector.files[0]);
+		// 	  console.log(lines)
+
+		// 	  // #nik
+		// 	  document.getElementById("ktp").setAttribute('value', lines[2].words[2].text)
+		// 	  console.log(lines[2].words[2].text);
+
+		// 	  // name
+		// 	  var result = '';
+		// 	  for(var i=2; i<lines[3].words.length; i++) {
+		// 	  	result += lines[3].words[i].text + ' '
+		// 	  }
+		// 	  console.log(result)
+		// 	  document.getElementById("name").setAttribute('value', result)
+
+		// 	  // gender
+		// 	  console.log(lines[5].words[3].text)
+		// 	  $("#genderId").val(lines[5].words[3].text).trigger('change');
+
+		// 	  // religion
+		// 	  console.log(lines[10].words[2].text)
+		// 	  $("#religionId").val(lines[10].words[2].text).trigger('change');
+
+		// 	  await worker.terminate();
+		// 	})();
+		// });
 
 	}
 }	
