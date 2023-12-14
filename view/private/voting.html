@@ -169,13 +169,13 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 											<div class="menu-submenu menu-submenu-classic menu-submenu-left">
 												<ul class="menu-subnav">
-													<li class="menu-item menu-item-active" aria-haspopup="true">
+													<li class="menu-item" aria-haspopup="true">
 														<a href="ktp.html" class="menu-link">
 															<i class="menu-icon fas fa-id-card"></i>
 															<span class="menu-text">Data KTP</span>
 														</a>
 													</li>
-													<li class="menu-item" aria-haspopup="true">
+													<li class="menu-item menu-item-active" aria-haspopup="true">
 														<a href="voting.html" class="menu-link">
 															<i class="menu-icon fas fa-vote-yea"></i>
 															<span class="menu-text">Data Voting</span>
@@ -243,7 +243,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<!--begin::Page Heading-->
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Data KTP</h5>
+										<h5 class="text-dark font-weight-bold my-1 mr-5">Data Voting</h5>
 										<!--end::Page Title-->
 										<!--begin::Breadcrumb-->
 										<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -251,7 +251,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<a href="" class="text-muted">Operational</a>
 											</li>
 											<li class="breadcrumb-item text-muted">
-												<a href="" class="text-muted">Data KTP</a>
+												<a href="" class="text-muted">Data Voting</a>
 											</li>
 										</ul>
 										<!--end::Breadcrumb-->
@@ -274,7 +274,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="card card-custom">
 									<div class="card-header flex-wrap py-5">
 										<div class="card-title">
-											<h3 class="card-label">Data Ktp
+											<h3 class="card-label">Data Voting
 											<!-- <div class="text-muted pt-2 font-size-sm">custom colu rendering</div></h3> -->
 										</div>
 										<div class="card-toolbar">
@@ -288,7 +288,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					                                    <path d="m20 20h-15.25c-.414 0-.75.336-.75.75s.336.75.75.75h15.75c.53 0 1-.47 1-1v-15.75c0-.414-.336-.75-.75-.75s-.75.336-.75.75zm-1-17c0-.478-.379-1-1-1h-15c-.62 0-1 .519-1 1v15c0 .621.52 1 1 1h15c.478 0 1-.379 1-1zm-9.25 6.75v-3c0-.414.336-.75.75-.75s.75.336.75.75v3h3c.414 0 .75.336.75.75s-.336.75-.75.75h-3v3c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-3h-3c-.414 0-.75-.336-.75-.75s.336-.75.75-.75z" fill="#000000"/>
 					                                </g>
 					                            </svg><!--end::Svg Icon--></span>
-					                            <span>Data KTP</span>
+					                            <span>Data Voting</span>
 					                        </a>
 					                        <!--end::Button-->
 										</div>
@@ -314,15 +314,15 @@ License: You must have a valid license purchased only from themeforest(the above
 					                        </div>
 					                    </div>
 										<!--begin: Datatable-->
-										<table class="table table-separate table-head-custom table-checkable" id="dt-ktps">
+										<table class="table table-separate table-head-custom table-checkable" id="dt-votings">
 											<thead>
 												<tr>
 													<!-- <th>Record ID</th> -->
-													<th>Nama</th>
-													<th>Jenis Kelamin</th>
-													<th>Agama</th>
-													<th>Marital</th>
-													<th>Kewarganegaraan</th>
+													<th>Code</th>
+													<th>Image</th>
+													<th>Kecamatan</th>
+													<th>Kelurahan</th>
+													<th>TPS</th>
 													<th>Status</th>
 													<th>Dibuat Pada</th>
 													<th>Dibuat oleh</th>
@@ -332,50 +332,62 @@ License: You must have a valid license purchased only from themeforest(the above
 											<tbody>
 												<tr>
 													<!-- <td>1</td> -->
-													<td>Bano Scroggie</td>
-													<td>LAKI-LAKI</td>
-													<td>Islam</td>
-													<td>Kawin</td>
-													<td>Indonesia</td>
+													<td>KYX34</td>
+													<td></td>
+													<td>Grogol Pertamburan</td>
+													<td>Grogol</td>
+													<td>01</td>
 													<td>1</td>
 													<td>2023 Jan 01 00:00:00</td>
-													<td>System</td>
+													<td>Admin</td>
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
 													<!-- <td>2</td> -->
-													<td>Ray Scroggie</td>
-													<td>PEREMPUAN</td>
-													<td>Kristen</td>
-													<td>Kawin</td>
-													<td>Indonesia</td>
-													<td>2</td>
+													<td>CFS01</td>
+													<td></td>
+													<td>Grogol Pertamburan</td>
+													<td>Jelambar</td>
+													<td>05</td>
+													<td>1</td>
 													<td>2023 Jan 01 00:00:00</td>
-													<td>System</td>
+													<td>Admin</td>
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
 													<!-- <td>3</td> -->
-													<td>Louise Scroggie</td>
-													<td>LAKI-LAKI</td>
-													<td>Hindu</td>
-													<td>LAJANG</td>
-													<td>Indonesia</td>
+													<td>XF01G</td>
+													<td></td>
+													<td>Palmerah</td>
+													<td>Kota Bambu</td>
+													<td>11</td>
 													<td>1</td>
 													<td>2023 Jan 01 00:00:00</td>
-													<td>System</td>
+													<td>Admin</td>
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
 													<!-- <td>4</td> -->
-													<td>Khan Scroggie</td>
-													<td>PEREMPUAN</td>
-													<td>Hindu</td>
-													<td>Lajang</td>
-													<td>Indonesia</td>
+													<td>PL00C</td>
+													<td></td>
+													<td>Palmerah</td>
+													<td>Jatipulo</td>
+													<td>20</td>
 													<td>1</td>
 													<td>2023 Jan 01 00:00:00</td>
-													<td>System</td>
+													<td>Admin</td>
+													<td nowrap="nowrap"></td>
+												</tr>
+												<tr>
+													<!-- <td>4</td> -->
+													<td>KP00F</td>
+													<td></td>
+													<td>Grogol Pertamburan</td>
+													<td>Jelambar</td>
+													<td>11</td>
+													<td>1</td>
+													<td>2023 Jan 01 00:00:00</td>
+													<td>Admin</td>
 													<td nowrap="nowrap"></td>
 												</tr>
 											</tbody>
@@ -385,7 +397,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 							</div>
 							<!--end::Container-->
-							<div class="modal fade" id="dataKtpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal fade" id="modal-data" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
@@ -395,79 +407,71 @@ License: You must have a valid license purchased only from themeforest(the above
 											</button>
 										</div>
 										<div class="modal-body">
-											<form class="form" id="dataKtpForm">
+											<form class="form" id="form-data">
 												<div class="row">
 													<div class="col-lg-3">
-													<div class="image-input image-input-outline" id="kt_image_1">
-														<div class="image-input-wrapper" style="background-image: url(../../assets/media/users/blank.png)"></div>
-														<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-															<i class="fa fa-pen icon-sm text-muted"></i>
-															<input type="file" id="imgInput" name="profile_avatar" accept=".png, .jpg, .jpeg" />
-															<input type="hidden" name="profile_avatar_remove" />
-														</label>
-														<span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-															<i class="ki ki-bold-close icon-xs text-muted"></i>
-														</span>
+														<div class="image-input image-input-outline" id="kt_image_1">
+															<div class="image-input-wrapper" style="background-image: url(../../assets/media/users/blank.png)"></div>
+															<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+																<i class="fa fa-pen icon-sm text-muted"></i>
+																<input type="file" id="imgInput" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+																<input type="hidden" name="profile_avatar_remove" />
+															</label>
+															<span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+																<i class="ki ki-bold-close icon-xs text-muted"></i>
+															</span>
+														</div>
 													</div>
-												</div>
-												<div class="col-lg-9">
-													<div class="form-group row">
-														<div class="col-lg-6">
-															<label>Nik
+													<div class="col-lg-9">
+														<!-- <div class="form-group">
+															<label>Code
 															<span class="text-danger">*</span></label>
-															<input type="text" name="ktp" id="ktp" class="form-control form-control-solid" placeholder="Masukkan nik" />
-															<span class="form-text text-muted">Silahkan masukkan nik</span>
+															<input type="text" name="code" id="code" class="form-control form-control-solid" placeholder="Masukkan code" />
+															<span class="form-text text-muted">Silahkan masukkan code</span>
+														</div> -->
+														<div class="form-group row">
+															<div class="col-lg-6">
+																<label>Kecamatan</label>
+																<select name="subdistrictId" id="subdistrictId" class="form-control form-control-solid select2">
+																	<option label="Label"></option>
+																	<option value="Grogol Pertamburan">Grogol Pertamburan</option>
+																	<option value="Palmerah">Palmerah</option>
+																	<option value="Taman Sari">Taman Sari</option>
+																	<option value="Kebon Jeruk">Kebon Jeruk</option>
+																	<option value="Kembangan">Kembangan</option>
+																</select>
+																<span class="form-text text-muted">Silahkan pilih kecamatan</span>
+															</div>
+															<div class="col-lg-6">
+																<label>Kelurahan</label>
+																<select name="wardId" id="wardId" class="form-control form-control-solid select2" placeholder="Pilih agama">
+																	<option label="Label"></option>
+																	<!-- <option value="ISLAM">ISLAM</option>
+																	<option value="KRISTEN">KRISTEN</option>
+																	<option value="HINDU">HINDU</option>
+																	<option value="BUDHA">BUDHA</option> -->
+																</select>
+																<span class="form-text text-muted">Silahkan pilih kelurahan</span>
+															</div>
 														</div>
-														<div class="col-lg-6">
-															<label>Nama
-															<span class="text-danger">*</span></label>
-															<input type="text" name="name" id="name" class="form-control" placeholder="Masukkan nama" />
-															<span class="form-text text-muted">Silahkan masukkan namar</span>
-														</div>
-													</div>
-													<div class="form-group row">
-														<div class="col-lg-6">
-															<label>Jenis Kelamin</label>
-															<select name="genderId" id="genderId" class="form-control form-control-solid select2">
-																<option label="Label"></option>
-																<option value="LAKI-LAKI">LAKI-LAKI</option>
-																<option value="PEREMPUAN">PEREMPUAN</option>
-															</select>
-															<span class="form-text text-muted">Silahkan pilih jenis kelamin</span>
-														</div>
-														<div class="col-lg-6">
-															<label>Agama</label>
-															<select name="religionId" id="religionId" class="form-control form-control-solid select2" placeholder="Pilih agama">
-																<option label="Label"></option>
-																<option value="ISLAM">ISLAM</option>
-																<option value="KRISTEN">KRISTEN</option>
-																<option value="HINDU">HINDU</option>
-																<option value="BUDHA">BUDHA</option>
-															</select>
-															<span class="form-text text-muted">Silahkan pilih agama</span>
-														</div>
-													</div>
-													<div class="form-group row">
-														<div class="col-lg-6">
-															<label>Perkawinan</label>
-															<select name="maritalId" id="maritalId" class="form-control form-control-solid select2">
-																<option label="Label"></option>
-																<option value="LAJANG">LAJANG</option>
-																<option value="KAWIN">KAWIN</option>
-															</select>
-															<span class="form-text text-muted">Silahkan pilih perkawinan</span>
-														</div>
-														<div class="col-lg-6">
-															<label>Kewarganegaraan</label>
-															<select name="nationalityId" id="nationalityId" class="form-control form-control-solid select2" placeholder="Pilih agama">
-																<option label="Label"></option>
-																<option value="WNI">WNI</option>
-																<option value="WNA">WNA</option>
-															</select>
-															<span class="form-text text-muted">Silahkan pilih kewarganegaraan</span>
+														<div class="form-group row">
+															<div class="col-lg-6">
+																<label>TPS</label>
+																<select name="tpsId" id="tpsId" class="form-control form-control-solid select2">
+																	<option label="Label"></option>
+																	<!-- <option value="LAJANG">LAJANG</option>
+																	<option value="KAWIN">KAWIN</option> -->
+																</select>
+																<span class="form-text text-muted">Silahkan pilih tps</span>
+															</div>
+															<div class="col-lg-6">
+																<label>Jumlah Suara
+																<span class="text-danger">*</span></label>
+																<input type="text" name="voting" id="voting" class="form-control" placeholder="Masukkan jumlah suara" />
+																<span class="form-text text-muted">Silahkan masukkan jumlah suara</span>
+															</div>
 														</div>
 													</div>
-												</div>
 												</div>
 											</form>
 										</div>
@@ -696,7 +700,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<script src="../../assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		
-		<script src="../../assets/js/app/ktp.js"></script>
+		<script src="../../assets/js/app/voting.js"></script>
 
 		<script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
 		

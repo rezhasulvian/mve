@@ -145,10 +145,18 @@ License: You must have a valid license purchased only from themeforest(the above
 										<li class="menu-item  menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active" data-menu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Dashboard</span><i class="menu-arrow"></i></a>
 											<div class="menu-submenu menu-submenu-classic menu-submenu-left">
 												<ul class="menu-subnav">
-													<li class="menu-item  menu-item-active " aria-haspopup="true">
-														<a href="dashboard.html" class="menu-link ">
+													<li class="menu-item" aria-haspopup="true">
+														<a href="dashboard_ktp.html" class="menu-link ">
 															<i class="menu-icon fas fa-chart-bar"></i>
-															<span class="menu-text">Dashboard Overview</span>
+															<span class="menu-text">Dashboard KTP</span>
+														</a>
+													</li>
+												</ul>
+												<ul class="menu-subnav">
+													<li class="menu-item menu-item-active" aria-haspopup="true">
+														<a href="dashboard.html" class="menu-link ">
+															<i class="menu-icon fas fa-chart-line"></i>
+															<span class="menu-text">Dashboard Voting</span>
 														</a>
 													</li>
 												</ul>
@@ -165,6 +173,12 @@ License: You must have a valid license purchased only from themeforest(the above
 														<a href="ktp.html" class="menu-link">
 															<i class="menu-icon fas fa-id-card"></i>
 															<span class="menu-text">Data KTP</span>
+														</a>
+													</li>
+													<li class="menu-item" aria-haspopup="true">
+														<a href="voting.html" class="menu-link">
+															<i class="menu-icon fas fa-vote-yea"></i>
+															<span class="menu-text">Data Voting</span>
 														</a>
 													</li>
 												</ul>
@@ -829,7 +843,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<!--begin::Page Heading-->
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Dashboard Overview</h5>
+										<h5 class="text-dark font-weight-bold my-1 mr-5">Dashboard Voting</h5>
 										<!--end::Page Title-->
 										<!--begin::Breadcrumb-->
 										<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -837,7 +851,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<a href="" class="text-muted">Dashboards</a>
 											</li>
 											<li class="breadcrumb-item text-muted">
-												<a href="" class="text-muted">Dashboard Overview</a>
+												<a href="" class="text-muted">Dashboard Voting</a>
 											</li>
 										</ul>
 										<!--end::Breadcrumb-->
@@ -847,8 +861,41 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--end::Info-->
 								<!--begin::Toolbar-->
 								<div class="d-flex align-items-center">
-									
+									<div class="row">
+										<div class="col-xl-5">
+											<select id="sKecId" name="sKecId" class="form-control form-control-solid select2">
+												<option label="Label"></option>
+												<option value="Grogol Pertamburan">Grogol Pertamburan</option>
+												<option value="Palmerah">Palmerah</option>
+												<option value="Taman Sari">Taman Sari</option>
+												<option value="Kebon Jeruk">Kebon Jeruk</option>
+												<option value="Kembangan">Kembangan</option>
+											</select>
+										</div>
+										<div class="col-xl-5">
+											<select id="sKelId" name="sKelId" class="form-control form-control-solid select2">
+												<option label="Label"></option>
+												<!-- <option value="Binong">Binong</option>
+												<option value="Suka Bakti">Suka Bakti</option> -->
+											</select>
+										</div>
+										<div class="col-xl-2">
+										 	<a href=""# id="searchGroupingBtn" class="btn btn-light-primary font-weight-bolder font-size-sm">
+						                        Cari
+						                    </a>
+										</div>
+									</div>
 								</div>
+								<!-- <div class="d-flex align-items-center">
+									<div class="input-group date">
+										<input type="text" class="form-control" id="sDate" readonly="readonly" placeholder="Pilih tanggal..." />
+										<div class="input-group-append">
+											<span class="input-group-text">
+												<i class="la la-calendar-check-o"></i>
+											</span>
+										</div>
+									</div>
+								</div> -->
 								<!--end::Toolbar-->
 							</div>
 						</div>
@@ -860,35 +907,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Dashboard-->
 								<!--begin::Row-->
 								<div class="row">
-									<div class="col-xl-4">
-										<div class="card card-custom bg-white card-stretch gutter-b shadow">
-											<!--begin::Body-->
-											<div class="card-body">
-												<div class="row">
-													<div class="col-lg-6 col-md-12">
-														<span class="svg-icon svg-icon-3x svg-icon-primary">
-															<!--begin::Svg Icon | path:../../../../assets/media/svg/icons/Communication/Mail-opened.svg-->
-															<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-															        <rect x="0" y="0" width="24" height="24"/>
-															        <path d="M7.67514486,18.731359 C9.6803634,17.3851601 11,15.0966889 11,12.5 C11,9.58867922 9.34119765,7.06479249 6.91718054,5.82192739 C8.29918974,4.68360845 10.0697622,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 C10.4066753,20 8.92214267,19.5342055 7.67514486,18.731359 Z" fill="#000000" opacity="0.3"/>
-															        <path d="M6.39268296,17.7059641 C4.91588435,16.254539 4,14.2342276 4,12 C4,10.0680854 4.68479668,8.29611365 5.82489501,6.91357974 C7.72637261,8.04773008 9,10.1251292 9,12.5 C9,14.6298467 7.97562469,16.5204376 6.39268296,17.7059641 Z" fill="#000000"/>
-															    </g>
-															</svg>
-															<!--end::Svg Icon-->
-														</span>
-														<span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">KTP Pemilih</span>
-														<span class="font-weight-bold text-muted font-size-h2">944.810</span>
-													</div>
-													<div class="col-lg-6 col-md-12">
-														<!-- <div id="ktpCollectChart"></div> -->
-													</div>
-												</div>
-											</div>
-											<!--end::Body-->
-										</div>
-									</div>
-									<div class="col-xl-4">
+									<div class="col-xl-6">
 										<div class="card card-custom bg-white card-stretch gutter-b shadow">
 											<!--begin::Body-->
 											<div class="card-body">
@@ -905,18 +924,20 @@ License: You must have a valid license purchased only from themeforest(the above
 															</svg>
 															<!--end::Svg Icon-->
 														</span>
-														<span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">KTP Terkumpul</span>
-														<span class="font-weight-bold text-muted font-size-h2">661.427</span>
+														<span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">Voting Terkumpul</span>
+														<span class="font-weight-bold text-muted font-size-h2" id="voteInfo"></span>
 													</div>
 													<div class="col-lg-6 col-md-12">
-														<div id="ktpCollectChart"></div>
+														<div id="doChangeCollect">
+															<div id="voteCollectChart"></div>
+														</div>
 													</div>
 												</div>
 											</div>
 											<!--end::Body-->
 										</div>
 									</div>
-									<div class="col-xl-4">
+									<div class="col-xl-6">
 										<div class="card card-custom bg-white card-stretch gutter-b shadow">
 											<!--begin::Body-->
 											<div class="card-body">
@@ -933,8 +954,8 @@ License: You must have a valid license purchased only from themeforest(the above
 															</svg>
 															<!--end::Svg Icon-->
 														</span>
-														<span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">Target KTP</span>
-														<span class="font-weight-bold text-muted font-size-h2">188.922</span>
+														<span class="card-title font-weight-bolder text-dark-75 font-size-h1 mb-0 mt-6 d-block">Target Voting</span>
+														<span class="font-weight-bold text-muted font-size-h2" id="voteTargetInfo"></span>
 													</div>
 													<div class="col-lg-6 col-md-12">
 														<div id="ktpTargetChart"></div>
@@ -948,61 +969,20 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--end::Row-->
 								<!--begin::Row-->
 								<div class="row">
-									<div class="col-lg-6 col-xxl-6">
+									<div class="col-lg-12 col-xxl-12">
 										<div class="card card-custom card-stretch gutter-b shadow">
 											<div class="card-header border-0 py-5 ">
 												<div class="card-title">
 													<h3 class="card-title align-items-start flex-column">
-														<span class="card-label fw-bold fs-3 mb-1">Data KTP</span>
+														<span class="card-label fw-bold fs-3 mb-1">Data Voting</span>
 														<span class="text-muted font-size-sm" id="dateInfo"></span>
 													</h3>
 												</div>
 											</div>
 											<div class="card-body">
-												<!-- <div class="row mb-5">
-													<div class="col-xl-5">
-														<select id="sKecId" name="sKecId" class="form-control form-control-solid select2">
-															<option label="Label"></option>
-															<option value="l">Curug</option>
-															<option value="2">Kelapa Dua</option>
-														</select>
-													</div>
-													<div class="col-xl-5">
-														<select id="sKelId" name="sKecId" class="form-control form-control-solid select2">
-															<option label="Label"></option>
-															<option value="l">Curug</option>
-															<option value="2">Kelapa Dua</option>
-														</select>
-													</div>
-													<div class="col-xl-2">
-													 	<a href=""# id="searchGroupingBtn" class="btn btn-light-primary font-weight-bolder font-size-sm">
-									                        Cari
-									                    </a>
-													</div>
-												</div> -->
-												<div id="doChangeKtpKec">
-			                                        <div id="ktpKecChartId"></div>
+												<div id="doChangeVote">
+			                                        <div id="voteChartId"></div>
 			                                    </div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="card card-custom card-stretch gutter-b shadow">
-											<div class="card-header border-0 py-5">
-												<div class="card-title">
-													<h3 class="card-title align-items-start flex-column">
-														<span class="card-label fw-bold fs-3 mb-1">Data Voting</span>
-														<span class="text-muted font-size-sm" id="dateInfoV"></span>
-													</h3>
-												</div>
-												<!-- <span class="font-weight-bolder text-dark-75 font-size-h2 mb-3 d-block">Data Voting
-												<span class="text-muted font-size-sm">3000</span> -->
-												</span>
-											</div>
-											<div class="card-body">
-												<!-- <div id="doChangeVoting"> -->
-			                                        <div id="votingChartId" class="d-flex justify-content-center"></div>
-			                                    <!-- </div> -->
 											</div>
 										</div>
 									</div>
@@ -1249,7 +1229,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="../../assets/js/pages/widgets.js"></script>
 		
-		<script type="text/javascript" src="../../assets/js/app/dashboard.js"></script>
+		<script type="text/javascript" src="../../assets/js/app/dashboard_voting.js"></script>
 
 		<script type="text/javascript">
 			$(document).ready(function() {

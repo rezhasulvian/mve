@@ -37,7 +37,7 @@ function Dashboard() {
         // });
 
         $('#sKelId').attr('disabled', true);
-        $('#sKelVotId').attr('disabled', true);
+        // $('#sKelVotId').attr('disabled', true);
 
 
         var date = new Date();
@@ -50,14 +50,14 @@ function Dashboard() {
         pCurrMonth = moment(date).format("MM yyyy");
 
 
-        $('#sDate').datepicker({
-            format: 'dd MM yyyy',
-            todayHighlight: true,
-            autoclose: true,
-            orientation: 'auto bottom',
-        });
+        // $('#sDate').datepicker({
+        //     format: 'dd MM yyyy',
+        //     todayHighlight: true,
+        //     autoclose: true,
+        //     orientation: 'auto bottom',
+        // });
 
-        $('#sDate').datepicker({dateFormat: 'dd MM yyyy'}).datepicker("setDate", pCurrDate);
+        // $('#sDate').datepicker({dateFormat: 'dd MM yyyy'}).datepicker("setDate", pCurrDate);
 
         $('#dateInfo').text("DPRD Kabupaten / Kota" + " " + dateName + " Pukul " + timeName + " WIB");
         $('#dateInfoV').text("DPRD Kabupaten / Kota" + " " + dateName + " Pukul " + timeName + " WIB");
@@ -65,7 +65,7 @@ function Dashboard() {
 
         // $('#sDate').flatpickr("defaultDate", pCurrDate);
 
-        loadVotingChart(44, 55, 13, 43, 22, 10, 50, 34, 25, 30, 35, 20);
+        // loadVotingChart(44, 55, 13, 43, 22, 10, 50, 34, 25, 30, 35, 20);
         loadKtpKec();
         loadKtpCollect();
         loadKtpTarget();
@@ -74,7 +74,7 @@ function Dashboard() {
 
         $('#sDate').on("change", function () {
 
-            loadVotingChart(55, 44, 10, 10, 22, 10, 50, 22, 25, 30, 25, 50);
+            // loadVotingChart(55, 44, 10, 10, 22, 10, 50, 22, 25, 30, 25, 50);
             loadKtpKec();
             // loadKtpKel();
 
@@ -90,6 +90,72 @@ function Dashboard() {
 
         $('#sKecId').change(function() {
             $('#sKelId').attr('disabled', false);
+
+            if($('#sKecId').val() == "Grogol Pertamburan") {
+                $('#sKelId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Grogol">Grogol</option>')
+                    .append('<option value="Jelambar">Jelambar</option>')
+                    .append('<option value="Jelambar Baru">Jelambar Baru</option>')
+                    .append('<option value="Tanjung Duren Selatan">Tanjung Duren Selatan</option>')
+                    .append('<option value="Tanjung Duren Utara">Tanjung Duren Utara</option>')
+                    .append('<option value="Tomang">Tomang</option>')
+                    .append('<option value="Wijaya Kusuma">Wijaya Kusuma</option>')
+
+                }
+
+                populate('#sKelId');
+
+            } else if($('#sKecId').val() == "Palmerah") {
+                $('#sKelId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Jatipulo">Jatipulo</option>')
+                    .append('<option value="Kota Bambu">Kota Bambu</option>')
+                    .append('<option value="Slipi">Slipi</option>')
+                    .append('<option value="Palmerah">Palmerah</option>')
+                    .append('<option value="Kemanggisan">Kemanggisan</option>')
+
+                }
+
+                populate('#sKelId');
+
+            } else if($('#sKecId').val() == "Taman Sari") {
+                $('#sKelId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Pinangsia">Pinangsia</option>')
+                    .append('<option value="Glodok">Glodok</option>')
+                    .append('<option value="Keagungan">Keagungan</option>')
+                    .append('<option value="Krukut">Krukut</option>')
+                    .append('<option value="Taman Sari">Taman Sari</option>')
+                    .append('<option value="Maphar">Maphar</option>')
+                    .append('<option value="Tangki">Tangki</option>')
+                    .append('<option value="Mangga Besar">Mangga Besar</option>')
+
+
+                }
+
+                populate('#sKelId');
+            } else if($('#sKecId').val() == "Kembangan") {
+                $('#sKelId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Kembangan">Kembangan</option>')
+                    .append('<option value="Meruya Ilir">Meruya Ilir</option>')
+                    .append('<option value="Meruya Udik">Meruya Udik</option>')
+                    .append('<option value="Srengseng">Srengseng</option>')
+                    .append('<option value="Joglo">Joglo</option>')
+
+                }
+
+                populate('#sKelId');
+            }
         });
 
         // $('#sKecVotId').change(function() {
