@@ -19,47 +19,56 @@ function Ktp() {
 		
 
 		table = $('#dt-ktps').DataTable({
-			'dom': 'rtip',
+			'dom': 'Bfrtip',
             'pageLength': 20,
             'responsive': true,
+            "buttons": [
+	            'copy', 'csv','excel', 'print'
+	        ],
 			'columnDefs': [
-				{
-					targets: 0,
-					render: function(data, type, full, meta) {
+				// {
+				// 	targets: 0,
+				// 	render: function(data, type, full, meta) {
 
-						var output;
-						var stateNo = KTUtil.getRandomInt(0, 7);
-						var states = [
-							'success',
-							'light',
-							'danger',
-							'success',
-							'warning',
-							'dark',
-							'primary',
-							'info'];
+				// 		var output;
+				// 		var stateNo = KTUtil.getRandomInt(0, 7);
+				// 		var states = [
+				// 			'success',
+				// 			'light',
+				// 			'danger',
+				// 			'success',
+				// 			'warning',
+				// 			'dark',
+				// 			'primary',
+				// 			'info'];
 
-						var state = states[stateNo];
+				// 		var state = states[stateNo];
 
-						output = `
-                            <div class="d-flex align-items-center">
-                                <div class="symbol symbol-50 symbol-light-` + state + `" flex-shrink-0">
-                                    <div class="symbol-label font-size-h5">` + full[0].substring(0, 1) + `</div>
-                                </div>
-                                <div class="ml-3">
-                                    <span class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">` + full[0] + `</span>
-                                </div>
-                            </div>`;
+				// 		output = `
+    //                         <div class="d-flex align-items-center">
+    //                             <div class="symbol symbol-50 symbol-light-` + state + `" flex-shrink-0">
+    //                                 <div class="symbol-label font-size-h5">` + full[0].substring(0, 1) + `</div>
+    //                             </div>
+    //                             <div class="ml-3">
+    //                                 <span class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">` + full[0] + `</span>
+    //                             </div>
+    //                         </div>`;
 
-						return output;
-					},
-				},
+				// 		return output;
+				// 	},
+				// },
 				// {
 				// 	targets: 1,
 				// 	render: function(data, type, full, meta) {
 				// 		return '<a class="text-dark-50 text-hover-primary" href="mailto:' + data + '">' + data + '</a>';
 				// 	},
 				// },
+				{
+					targets: 0,
+					render: function(data, type, full, meta){
+						return '<span class="font-weight-bold text-primary">' + data + '</span>';
+					}
+				},
 				{
 					targets: -1,
 					title: 'Actions',
@@ -88,7 +97,7 @@ function Ktp() {
 					},
 				},
 				{
-					targets: 5,
+					targets: 6,
 					render: function(data, type, full, meta) {
 						var status = {
 							1: {'title': 'ACTIVE', 'class': ' label-light-success'},
@@ -101,13 +110,13 @@ function Ktp() {
 					},
 				},
 				{
-					targets: 6,
+					targets: 7,
 					render: function(data, type, full, meta) {
 						return '<span class="text-muted">' + data + '</span>';
 					},
 				},
 				{
-					targets: 7,
+					targets: 8,
 					render: function(data, type, full, meta) {
 						return '<span class="text-muted">' + data + '</span>';
 					},

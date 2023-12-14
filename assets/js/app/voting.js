@@ -9,19 +9,95 @@ function Ktp() {
 
 		var fileSelector = document.querySelector('#imgInput');
 
-		// if (fileSelector != null) {
-			
-		// }
+		$('#wardId').attr('disabled', true);
+		$('#tpsId').attr('disabled', true);
 
+		$('#subdistrictId').change(function() {
+            $('#wardId').attr('disabled', false);
+
+            if($('#subdistrictId').val() == "Grogol Pertamburan") {
+                $('#wardId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Grogol">Grogol</option>')
+                    .append('<option value="Jelambar">Jelambar</option>')
+                    .append('<option value="Jelambar Baru">Jelambar Baru</option>')
+                    .append('<option value="Tanjung Duren Selatan">Tanjung Duren Selatan</option>')
+                    .append('<option value="Tanjung Duren Utara">Tanjung Duren Utara</option>')
+                    .append('<option value="Tomang">Tomang</option>')
+                    .append('<option value="Wijaya Kusuma">Wijaya Kusuma</option>')
+
+                }
+
+                populate('#wardId');
+
+            } else if($('#subdistrictId').val() == "Palmerah") {
+                $('#wardId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Jatipulo">Jatipulo</option>')
+                    .append('<option value="Kota Bambu">Kota Bambu</option>')
+                    .append('<option value="Slipi">Slipi</option>')
+                    .append('<option value="Palmerah">Palmerah</option>')
+                    .append('<option value="Kemanggisan">Kemanggisan</option>')
+
+                }
+
+                populate('#wardId');
+
+            } else if($('#subdistrictId').val() == "Taman Sari") {
+                $('#wardId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Pinangsia">Pinangsia</option>')
+                    .append('<option value="Glodok">Glodok</option>')
+                    .append('<option value="Keagungan">Keagungan</option>')
+                    .append('<option value="Krukut">Krukut</option>')
+                    .append('<option value="Taman Sari">Taman Sari</option>')
+                    .append('<option value="Maphar">Maphar</option>')
+                    .append('<option value="Tangki">Tangki</option>')
+                    .append('<option value="Mangga Besar">Mangga Besar</option>')
+
+
+                }
+
+                populate('#wardId');
+            } else if($('#sKecId').val() == "Kembangan") {
+                $('#wardId').empty();
+                function populate(selector) {
+                  $(selector)
+                    .append('<option lable="Label"></option>')
+                    .append('<option value="Kembangan">Kembangan</option>')
+                    .append('<option value="Meruya Ilir">Meruya Ilir</option>')
+                    .append('<option value="Meruya Udik">Meruya Udik</option>')
+                    .append('<option value="Srengseng">Srengseng</option>')
+                    .append('<option value="Joglo">Joglo</option>')
+
+                }
+
+                populate('#wardId');
+            }
+        });
+
+        $('#wardId').change(function() {
+            $('#tpsId').attr('disabled', false);
+        });
+1
 		var date = new Date();
 		var pDateTime = moment(date).format("yyy MM dd HH:mm:ss");
 
 		
 
 		table = $('#dt-votings').DataTable({
-			'dom': 'rtip',
+			'dom': 'Bfrtip',
             'pageLength': 20,
             'responsive': true,
+            "buttons": [
+	            'copy', 'csv','excel', 'print'
+	        ],
 			'columnDefs': [
 				// {
 				// 	targets: 0,
@@ -144,11 +220,82 @@ function Ktp() {
 			});
 		});
 
+		$('#btnImage').on('click', function(e) {
+			e.preventDefault();
+
+			$('#imagePreview').attr('src', $('#imageResource').attr('src'));
+
+			$('#imageModal').modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+		});
+
+		$('#btnImage2').on('click', function(e) {
+			e.preventDefault();
+
+			$('#imagePreview2').attr('src', $('#imageResource2').attr('src'));
+
+			$('#imageModal2').modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+		});
+
+		$('#btnImage3').on('click', function(e) {
+			e.preventDefault();
+
+			$('#imagePreview3').attr('src', $('#imageResource3').attr('src'));
+
+			$('#imageModal3').modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+		});
+
+		$('#btnImage4').on('click', function(e) {
+			e.preventDefault();
+
+			$('#imagePreview4').attr('src', $('#imageResource4').attr('src'));
+
+			$('#imageModal4').modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+		});
+
+		$('#btnImage5').on('click', function(e) {
+			e.preventDefault();
+
+			$('#imagePreview5').attr('src', $('#imageResource5').attr('src'));
+
+			$('#imageModal5').modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+		});
+
 		$('#submit').on('click', function(e) {
 			e.preventDefault();
 
 		    var code = $('#form-data input[name="code"]').val();
-		    var photo = $('#form-data input[name="photo"]').val();
+		    var voting = $('#form-data input[name="voting"]').val();
+
+		    // var photo = $('#form-data input[name="photo"]').val();
+		    var photo = '<div class="symbol-list d-fle x flex-wrap">' + 
+                            '<div class="symbol symbol-40 symbol-lg-60 symbol-hover">' +
+                                '<a href="#" id="btnImage" class="btn" style="padding: 0px" data-toggle="kt-tooltip" data-placement="top" title="Detail" aria-hidden="true">' +
+                                    '<div class="symbol symbol-60 symbol-2by3 flex-shrink-0 mr-1">' +
+                                        '<img id="imageResource" src="../../assets/media/app/voting-luwu.jpeg" style="object-fit: cover;" alt="photo">' +
+                                    '</div>' +
+                                '</a>' +
+                            '</div>' +
+                   	 	'</div>'
 
 			var subdistrict = $('#form-data select[name="subdistrictId"] option:selected').val();
 			var ward = $('#form-data select[name="wardId"] option:selected').val();
@@ -160,7 +307,7 @@ function Ktp() {
 
 			$('#modal-data').modal('hide');
 
-		    table.row.add([name, gender, religion, marital, nationality, status, createdDate, createdBy,  ""]).draw();
+		    table.row.add([tps, photo, subdistrict, ward, voting, status, createdDate, createdBy,  ""]).draw();
 
 		    swal.fire({
                 position: 'top-right',
@@ -172,6 +319,17 @@ function Ktp() {
             });
 
 		});
+
+		function imageModal() {
+		    //$('#pop').on("click", function(e) {
+		    $('#imagePreview').attr('src', $('#imageResource').attr('src'));
+		    $('#imageModal').modal({
+		        backdrop: 'static',
+		        keyboard: true,
+		        show: true
+		    });
+		    //});
+		}
 
 		// $('input[type=file]').on('change', function(e) {
 		// 	e.preventDefault();
